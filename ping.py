@@ -2,8 +2,8 @@
 """
 CPC Ping Manager
 -----------------
-Pings each Supabase project's REST API so the project stays active and
-doesn't get auto-paused by Supabase's free-tier inactivity timer.
+Pings each Supabase project's Auth settings endpoint so the project stays
+active and doesn't get auto-paused by Supabase's free-tier inactivity timer.
 
 Writes the result of each ping to status.json, which the status page
 (index.html) reads and displays.
@@ -40,7 +40,7 @@ TIMEOUT_SECONDS = 15
 def ping_project(project):
     ref = project["ref"]
     key = os.environ.get(project["secret_env"], "")
-    url = f"https://{ref}.supabase.co/rest/v1/"
+    url = f"https://{ref}.supabase.co/auth/v1/settings"
 
     result = {
         "name": project["name"],
@@ -55,8 +55,6 @@ def ping_project(project):
     if not key:
         result["error"] = f"Missing secret {project['secret_env']}"
         return result
-
-    result["key_len"] = len(key)
 
     req = urllib.request.Request(
         url,
