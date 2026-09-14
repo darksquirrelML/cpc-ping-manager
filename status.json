@@ -1,23 +1,25 @@
 {
-  "last_run_at": "2026-09-14T07:52:56+00:00",
+  "last_run_at": "2026-09-14T07:59:12+00:00",
   "projects": [
     {
       "name": "CPC Connect (+ Defect Tracker, Safety Violation Tracker, CPC Site Reports)",
       "ref": "ihwgejsioutzcmkaaumi",
-      "checked_at": "2026-09-14T07:52:56+00:00",
+      "checked_at": "2026-09-14T07:59:12+00:00",
       "ok": false,
       "http_status": 401,
-      "response_ms": 256,
-      "error": "HTTP 401"
+      "response_ms": 248,
+      "error": "HTTP 401: {\"hint\":\"Only the `service_role` API key can be used for this endpoint.\",\"message\":\"Invalid API key\"}",
+      "key_len": 208
     },
     {
       "name": "Vehicle Movement Dashboard (pick-up schedule)",
       "ref": "lahrwbqnurklcsbkghic",
-      "checked_at": "2026-09-14T07:52:56+00:00",
+      "checked_at": "2026-09-14T07:59:12+00:00",
       "ok": false,
       "http_status": 401,
-      "response_ms": 137,
-      "error": "HTTP 401"
+      "response_ms": 185,
+      "error": "HTTP 401: {\"hint\":\"Double check your Supabase `anon` or `service_role` API key.\",\"message\":\"Invalid API key\"}",
+      "key_len": 208
     }
   ]
 }
