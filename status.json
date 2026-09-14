@@ -1,23 +1,23 @@
 {
-  "last_run_at": "2026-09-14T08:04:29+00:00",
+  "last_run_at": "2026-09-14T08:10:43+00:00",
   "projects": [
     {
       "name": "CPC Connect (+ Defect Tracker, Safety Violation Tracker, CPC Site Reports)",
       "ref": "ihwgejsioutzcmkaaumi",
-      "checked_at": "2026-09-14T08:04:29+00:00",
+      "checked_at": "2026-09-14T08:10:42+00:00",
       "ok": true,
       "http_status": 200,
-      "response_ms": 710,
+      "response_ms": 701,
       "error": null
     },
     {
       "name": "Vehicle Movement Dashboard (pick-up schedule)",
       "ref": "lahrwbqnurklcsbkghic",
-      "checked_at": "2026-09-14T08:04:29+00:00",
-      "ok": false,
-      "http_status": 401,
-      "response_ms": 131,
-      "error": "HTTP 401: {\"hint\":\"Double check your Supabase `anon` or `service_role` API key.\",\"message\":\"Invalid API key\"}"
+      "checked_at": "2026-09-14T08:10:43+00:00",
+      "ok": true,
+      "http_status": 200,
+      "response_ms": 835,
+      "error": null
     }
   ]
 }
