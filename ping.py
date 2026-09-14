@@ -56,6 +56,8 @@ def ping_project(project):
         result["error"] = f"Missing secret {project['secret_env']}"
         return result
 
+    result["key_len"] = len(key)
+
     req = urllib.request.Request(
         url,
         headers={
@@ -70,13 +72,13 @@ def ping_project(project):
             result["http_status"] = resp.status
             result["ok"] = 200 <= resp.status < 300
     except urllib.error.HTTPError as e:
-        # Supabase returns 200s for a valid key; a 401/404 etc still means
-        # we successfully reached the project (which is all "keep-alive"
-        # needs), so treat any HTTP response as reachable, but only a 2xx
-        # as fully "ok".
         result["http_status"] = e.code
         result["ok"] = 200 <= e.code < 300
-        result["error"] = f"HTTP {e.code}"
+        try:
+            body = e.read().decode("utf-8", errors="replace")[:200]
+        except Exception:
+            body = ""
+        result["error"] = f"HTTP {e.code}: {body}" if body else f"HTTP {e.code}"
     except Exception as e:  # noqa: BLE001 - want to record any failure
         result["error"] = str(e)
     finally:
