@@ -25,6 +25,7 @@ jobs:
       - name: Ping projects
         env:
           CPC_CONNECT_ANON_KEY: ${{ secrets.CPC_CONNECT_ANON_KEY }}
+          DEFECT_TRACKER_ANON_KEY: ${{ secrets.DEFECT_TRACKER_ANON_KEY }}
           VEHICLE_DASHBOARD_ANON_KEY: ${{ secrets.VEHICLE_DASHBOARD_ANON_KEY }}
         run: python ping.py
 
