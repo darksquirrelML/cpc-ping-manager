@@ -1,22 +1,31 @@
 {
-  "last_run_at": "2026-09-16T02:21:33+00:00",
+  "last_run_at": "2026-09-17T01:34:04+00:00",
   "projects": [
     {
-      "name": "CPC Connect (+ Defect Tracker, Safety Violation Tracker, CPC Site Reports)",
+      "name": "CPC Connect (+ Safety Violation Tracker, CPC Site Reports)",
       "ref": "ihwgejsioutzcmkaaumi",
-      "checked_at": "2026-09-16T02:21:32+00:00",
+      "checked_at": "2026-09-17T01:34:01+00:00",
       "ok": true,
       "http_status": 200,
-      "response_ms": 624,
+      "response_ms": 797,
+      "error": null
+    },
+    {
+      "name": "Defect Tracker",
+      "ref": "pyyncjesibtrilipsfhm",
+      "checked_at": "2026-09-17T01:34:02+00:00",
+      "ok": true,
+      "http_status": 200,
+      "response_ms": 840,
       "error": null
     },
     {
       "name": "Vehicle Movement Dashboard (pick-up schedule)",
       "ref": "lahrwbqnurklcsbkghic",
-      "checked_at": "2026-09-16T02:21:32+00:00",
+      "checked_at": "2026-09-17T01:34:03+00:00",
       "ok": true,
       "http_status": 200,
-      "response_ms": 1019,
+      "response_ms": 1062,
       "error": null
     }
   ]
