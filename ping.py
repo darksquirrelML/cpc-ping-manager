@@ -22,9 +22,14 @@ from datetime import datetime, timezone
 
 PROJECTS = [
     {
-        "name": "CPC Connect (+ Defect Tracker, Safety Violation Tracker, CPC Site Reports)",
+        "name": "CPC Connect (+ Safety Violation Tracker, CPC Site Reports)",
         "ref": "ihwgejsioutzcmkaaumi",
         "secret_env": "CPC_CONNECT_ANON_KEY",
+    },
+    {
+        "name": "Defect Tracker",
+        "ref": "pyyncjesibtrilipsfhm",
+        "secret_env": "DEFECT_TRACKER_ANON_KEY",
     },
     {
         "name": "Vehicle Movement Dashboard (pick-up schedule)",
