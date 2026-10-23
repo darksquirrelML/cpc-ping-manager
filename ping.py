@@ -24,6 +24,7 @@ PROJECTS = [
     {
         "name": "CPC Connect (+ Safety Violation Tracker, CPC Site Reports)",
         "ref": "ihwgejsioutzcmkaaumi",
+        "table": "cpc_apps",
         "secret_env": "CPC_CONNECT_ANON_KEY",
     },
     {
@@ -41,12 +42,16 @@ PROJECTS = [
 STATUS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "status.json")
 TIMEOUT_SECONDS = 15
 
-
 def ping_project(project):
     ref = project["ref"]
     key = os.environ.get(project["secret_env"], "")
-    url = f"https://{ref}.supabase.co/auth/v1/settings"
-
+    table = project.get("table")
+    if table:
+        # Real database read: counts as activity for Supabase.
+        url = f"https://{ref}.supabase.co/rest/v1/{table}?select=*&limit=1"
+    else:
+        url = f"https://{ref}.supabase.co/auth/v1/settings"
+        
     result = {
         "name": project["name"],
         "ref": ref,
